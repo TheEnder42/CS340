@@ -1,0 +1,15 @@
+start command prompt
+cd \Users\SkynetAccess\git\p-p-p-pokerface
+lein repl
+
+In the REPL:
+
+(use 'midje.repl)
+
+Then,
+
+(load-facts)
+
+Then, e.g.:
+
+(check-facts #(= (:exercise %) 1))

@@ -1,0 +1,8 @@
+Lang 1:
+abb(aa)*
+
+Lang 2:
+(e|a)(ba)*(e|b)
+
+Lang 3:
+a* b (a* b a* b)* a*

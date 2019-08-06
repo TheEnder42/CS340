@@ -1,0 +1,23 @@
+Language 1:
+
+a(c|e)(ab)*
+
+
+Language 2:
+
+a* (a+ b)* a*
+
+
+Language 3:
+
+a* (b a* b)* a*
+
+
+Language 4:?
+
+(a* c* (b+ a)* )*     X
+
+
+Language 5:
+
+(a|b)(a|b)((a|b)(a|b)(a|b))*

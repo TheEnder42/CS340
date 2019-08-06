@@ -1,0 +1,22 @@
+main:
+	; Create the initial stack frame with room for given
+	; number of arguments and locals.
+
+	; create room for one local variable: you may want to increase this
+	enter 0, 2
+
+	; Local variables:
+	; 0: the value of N
+	; 1: accumulator sum
+
+	ldc_i 5			; this is the value of N
+	stlocal 0		; store it in local variable 0
+
+	; TODO: compute the sum of the integers 1..N
+	
+
+	; Note: the ret instruction requires that there is
+	; at least one operand on the operand stack.
+	ldc_i 0 ; dummy value
+
+	ret

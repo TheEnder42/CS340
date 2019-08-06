@@ -1,0 +1,90 @@
+eval(and,t,t,t).
+eval(and,t,f,f).
+eval(and,f,t,f).
+eval(and,f,f,f).
+
+eval(or,t,t,t).
+eval(or,t,f,t).
+eval(or,f,t,t).
+eval(or,f,f,f).
+
+eval(nand,t,t,f).
+eval(nand,t,f,t).
+eval(nand,f,t,t).
+eval(nand,f,f,t).
+
+eval(nor,t,t,f).
+eval(nor,t,f,f).
+eval(nor,f,t,f).
+eval(nor,f,f,t).
+
+eval(xor,t,t,f).
+eval(xor,t,f,t).
+eval(xor,f,t,t).
+eval(xor,f,f,f).
+
+% X is op1, Y is op2
+composeTwo(X, Y, A, B, C, Z) :-
+  eval(Y, B, C, ResultOfY),
+  eval(X, A, ResultOfY, Z).
+
+% X is op1, Y is op2
+functionOne(X, Y) :-
+  composeTwo(X, Y, t, t, t, t),
+  composeTwo(X, Y, t, t, f, t),
+  composeTwo(X, Y, t, f, t, t),
+  composeTwo(X, Y, t, f, f, f),
+  composeTwo(X, Y, f, t, t, f),
+  composeTwo(X, Y, f, t, f, f),
+  composeTwo(X, Y, f, f, t, f),
+  composeTwo(X, Y, f, f, f, t).
+  
+functionTwo(X, Y) :-
+  composeTwo(X, Y, t, t, t, f),
+  composeTwo(X, Y, t, t, f, f),
+  composeTwo(X, Y, t, f, t, f),
+  composeTwo(X, Y, t, f, f, f),
+  composeTwo(X, Y, f, t, t, f),
+  composeTwo(X, Y, f, t, f, t),
+  composeTwo(X, Y, f, f, t, t),
+  composeTwo(X, Y, f, f, f, t).
+  
+functionThree(X, Y) :-
+  composeTwo(X, Y, t, t, t, t),
+  composeTwo(X, Y, t, t, f, t),
+  composeTwo(X, Y, t, f, t, t),
+  composeTwo(X, Y, t, f, f, t),
+  composeTwo(X, Y, f, t, t, f),
+  composeTwo(X, Y, f, t, f, t),
+  composeTwo(X, Y, f, f, t, t),
+  composeTwo(X, Y, f, f, f, t).
+  
+functionFour(X, Y) :-
+  composeTwo(X, Y, t, t, t, t),
+  composeTwo(X, Y, t, t, f, t),
+  composeTwo(X, Y, t, f, t, f),
+  composeTwo(X, Y, t, f, f, t),
+  composeTwo(X, Y, f, t, t, t),
+  composeTwo(X, Y, f, t, f, t),
+  composeTwo(X, Y, f, f, t, t),
+  composeTwo(X, Y, f, f, f, f).
+  
+functionFive(X, Y) :-
+  composeTwo(X, Y, t, t, t, f),
+  composeTwo(X, Y, t, t, f, f),
+  composeTwo(X, Y, t, f, t, f),
+  composeTwo(X, Y, t, f, f, f),
+  composeTwo(X, Y, f, t, t, t),
+  composeTwo(X, Y, f, t, f, f),
+  composeTwo(X, Y, f, f, t, f),
+  composeTwo(X, Y, f, f, f, t).
+  
+functionSix(X, Y) :-
+  composeTwo(X, Y, t, t, t, f),
+  composeTwo(X, Y, t, t, f, t),
+  composeTwo(X, Y, t, f, t, t),
+  composeTwo(X, Y, t, f, f, t),
+  composeTwo(X, Y, f, t, t, t),
+  composeTwo(X, Y, f, t, f, f),
+  composeTwo(X, Y, f, f, t, f),
+  composeTwo(X, Y, f, f, f, f).

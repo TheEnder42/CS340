@@ -1,0 +1,18 @@
+father(homer, bart).
+father(homer, lisa).
+father(homer, maggie).
+father(grandpa, homer).
+father(grandpa, herb).
+
+mother(marge, bart).
+mother(marge, lisa).
+mother(marge, maggie).
+mother(grandma, homer).
+
+samefather(X, Y) :- father(Q, X), father(Q, Y).
+samemother(X, Y) :- mother(Q, X), mother(Q, Y).
+
+siblings(X,Y) :- (samemother(X,Y); samefather(X,Y)), X \= Y.
+
+paternal_grandfather(X, Y) :- father(X, Q), father(Q, Y).
+paternal_grandmother(X, Y) :- mother(X, Z), father(Z, Y).
