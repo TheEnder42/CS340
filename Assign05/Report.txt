@@ -1,0 +1,51 @@
+functionOne(X, Y).
+
+yes.
+X / xor  Y / nor
+Solution: functionOne(xor,nor)
+
+
+
+functionTwo(X, Y).
+
+yes.
+X / nor  Y / and
+Solution: functionTwo(nor,and)
+
+
+
+functionThree(X, Y).
+
+yes.
+X / or  Y / nand
+Solution: functionThree(or,nand)
+
+
+
+functionFour(X, Y).
+
+no.
+
+
+
+functionFive(X, Y).
+
+yes.
+X / nor  Y / xor
+Solution: functionFive(nor,xor)
+
+
+
+functionSix(X, Y).
+
+yes.
+X / xor  Y / and
+Solution: functionSix(xor,and)
+
+
+First I defined the function of each operator (and, or, nor, nand, xor) and their T/F inputs/output.
+For each function I defined the formula A?(B?C)=Z, and the given T/F for each variable.
+Then each query was used to ask the Prolog if there were any combination of two operators that would make 
+the given formula work as the function dictated. Each section above is the query used followed by the output
+of the Prolog program. I trust its outputs on 4 and 5 are correct because I solved functions 1,2,3,6 by hand, and 
+got the same results as the Prolog.
